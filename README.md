@@ -1,6 +1,6 @@
 # Reservasi Lab Komputer
 
-Halaman statis untuk membuka aplikasi Reservasi Lab Komputer dari Google Apps Script. `index.html` langsung memuat aplikasi dalam iframe, tanpa proses build, JavaScript tambahan, atau layar loading pada halaman ini.
+Halaman statis yang langsung mengalihkan pengunjung ke aplikasi Reservasi Lab Komputer di Google Apps Script. Tidak ada proses build, JavaScript, atau animasi loading pada halaman ini.
 
 ## Deploy ke Cloudflare Pages
 
@@ -18,5 +18,6 @@ Halaman statis untuk membuka aplikasi Reservasi Lab Komputer dari Google Apps Sc
 
 ## Catatan
 
-- Tidak ada dependensi atau perintah build untuk halaman ini. URL Google Apps Script ada pada atribut `src` iframe di `index.html`; ubah URL tersebut jika deployment Apps Script berganti.
-- Halaman yang diterbitkan tetap memerlukan koneksi ke Google Apps Script. Jika isi iframe tidak muncul, periksa akses deployment Apps Script dan izin untuk ditampilkan dalam iframe. Loading yang berasal dari aplikasi Apps Script perlu diubah pada kode aplikasi tersebut.
+- URL Google Apps Script ada pada tag `meta http-equiv="refresh"` dan tautan cadangan di `index.html`. Perbarui keduanya jika deployment Apps Script berganti.
+- Alamat Cloudflare Pages atau GitHub Pages akan mengalihkan browser ke domain `script.google.com`. Ini diperlukan karena Google Apps Script saat ini menolak ditampilkan di iframe dari domain lain.
+- Halaman tetap memerlukan akses ke Google Apps Script. Jika aplikasinya tidak terbuka secara langsung, periksa akses dan status deployment Apps Script.
